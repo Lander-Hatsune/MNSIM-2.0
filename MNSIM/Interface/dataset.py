@@ -225,16 +225,16 @@ class ImageNet(ClassificationBaseDataset):
         self.mean = (0.485, 0.456, 0.406)
         self.std = (0.229, 0.224, 0.225)
         super(ImageNet, self).__init__(dataset_ini)
-        self.get_dataset(
-            "train",
-            "train_dataset",
-            torchvision.datasets.ImageFolder,
-        )
-        self.get_dataset(
-            "test",
-            "test_dataset",
-            torchvision.datasets.ImageFolder,
-        )
+        # self.get_dataset(
+        #     "train",
+        #     "train_dataset",
+        #     torchvision.datasets.ImageFolder,
+        # )
+        # self.get_dataset(
+        #     "test",
+        #     "test_dataset",
+        #     torchvision.datasets.ImageFolder,
+        # )
 
     def get_dataset_cfg(self, dataset_type):
         """

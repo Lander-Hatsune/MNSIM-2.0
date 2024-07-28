@@ -719,6 +719,10 @@ class QuantizePooling(BaseTransferLayer):
     """
     NAME = "pooling"
     def set_module(self):
+        
+        if "mode" not in self.layer_ini["layer"]:
+            self.layer_ini["layer"]["mode"] = "avg"
+
         if self.layer_ini["layer"]["mode"] == "max":
             PoolingCls = nn.MaxPool2d
         elif self.layer_ini["layer"]["mode"] == "avg":

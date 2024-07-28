@@ -61,7 +61,7 @@ class BaseModel(nn.Module, Component):
         self.layer_ini_list = self.get_layer_ini_list(model_config_path)
         self.dataset = dataset
         # modify conv, the last fc based on the dataset
-        self.modify_last_fc(self.dataset)
+        # self.modify_last_fc(self.dataset)
         self.modify_conv_with_bn()
         self.layer_list = nn.ModuleList([
             BaseLayer.get_class_(layer_ini["layer"]["type"])(layer_ini)

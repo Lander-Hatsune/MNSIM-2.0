@@ -50,12 +50,12 @@ class EvaluationInterface(Component):
                 "dataset": self.dataset
         })
         # trainer
-        self.trainer = _init_component(
-            BaseTrainer, self.evaluation_config, "trainer",
-            {
-                "dataset": self.dataset,
-                "model": self.model,
-        })
+        # self.trainer = _init_component(
+        #     BaseTrainer, self.evaluation_config, "trainer",
+        #     {
+        #         "dataset": self.dataset,
+        #         "model": self.model,
+        # })
 
     def get_structure(self):
         """

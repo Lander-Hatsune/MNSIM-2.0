@@ -102,6 +102,20 @@ def main():
         print("Quantization range: fixed range (depends on the maximum value)")
     else:
         print("Quantization range: dynamic range (depends on the data distribution)")
+
+
+    evaluation_interface = _init_evaluation_interface(
+        "vgg16_imagenet", "imagenet", "SimConfig.ini", None, -1,
+        # "MNSIM/Interface/zoo/cifar10_resnet18_SGD_FIX_TRAIN_FIX_TRAIN.pth", 0
+    )
+
+    tile_behavior_list = evaluation_interface.noc_data()
+    import pickle
+    with open("tmp.pkl", "wb") as f:
+        pickle.dump(tile_behavior_list, f)
+    exit(0)
+
+
     # __TestInterface = TrainTestInterface(args.NN, 'MNSIM.Interface.cifar10', args.hardware_description,
     #                                      args.weights, args.device)
     # __TestInterface = TrainTestInterface(network_module=args.NN, dataset_module='MNSIM.Interface.cifar10', SimConfig_path=args.hardware_description,
