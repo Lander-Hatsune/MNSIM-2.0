@@ -6,13 +6,13 @@ import configparser as cp
 work_path = os.path.dirname(os.getcwd())
 sys.path.append(work_path)
 import numpy as np
-# from MNSIM.Interface.interface import TrainTestInterface
-from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
-from MNSIM.Mapping_Model.Tile_connection_graph import TCG
+# from ...MNSIM.Interface.interface import TrainTestInterface
+from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Mapping_Model.Tile_connection_graph import TCG
 import pandas as pd
-from MNSIM.Hardware_Model.Tile import tile
-from MNSIM.Hardware_Model.Buffer import buffer
-from MNSIM.Hardware_Model.Adder import adder
+from ...MNSIM.Hardware_Model.Tile import tile
+from ...MNSIM.Hardware_Model.Buffer import buffer
+from ...MNSIM.Hardware_Model.Adder import adder
 import math
 class Model_area():
     def __init__(self, NetStruct, SimConfig_path, multiple=None, TCG_mapping=None):

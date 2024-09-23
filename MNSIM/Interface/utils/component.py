@@ -9,8 +9,8 @@
 @CreateTime:
     2021/11/19 15:59
 """
-from MNSIM.Interface.utils.logger import getLogger
-from MNSIM.Interface.utils.registry import RegistryMeta
+from ...MNSIM.Interface.utils.logger import getLogger
+from ...MNSIM.Interface.utils.registry import RegistryMeta
 
 class Component(object, metaclass=RegistryMeta):
     """

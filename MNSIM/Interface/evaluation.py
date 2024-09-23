@@ -13,16 +13,16 @@ import copy
 import math
 
 import numpy as np
-from MNSIM.Hardware_Model.Buffer import buffer
-from MNSIM.Interface.dataset import ClassificationBaseDataset
-from MNSIM.Interface.layer import split_by_num
-from MNSIM.Interface.model import BaseModel
-from MNSIM.Interface.trainer import BaseTrainer
-from MNSIM.Interface.utils.component import Component
-from MNSIM.Interface.utils.utils import _init_component, load_sim_config
-from MNSIM.Interface.utils.yaml_io import read_yaml
-from MNSIM.Latency_Model.PE_latency import PE_latency_analysis
-from MNSIM.Latency_Model.Pooling_latency import pooling_latency_analysis
+from ...MNSIM.Hardware_Model.Buffer import buffer
+from ...MNSIM.Interface.dataset import ClassificationBaseDataset
+from ...MNSIM.Interface.layer import split_by_num
+from ...MNSIM.Interface.model import BaseModel
+from ...MNSIM.Interface.trainer import BaseTrainer
+from ...MNSIM.Interface.utils.component import Component
+from ...MNSIM.Interface.utils.utils import _init_component, load_sim_config
+from ...MNSIM.Interface.utils.yaml_io import read_yaml
+from ...MNSIM.Latency_Model.PE_latency import PE_latency_analysis
+from ...MNSIM.Latency_Model.Pooling_latency import pooling_latency_analysis
 
 
 class EvaluationInterface(Component):
@@ -118,6 +118,11 @@ class EvaluationInterface(Component):
                         in_channels = in_channel_list[i]
                         out_channels = output_channel_list[j]
                         # init PE instance
+                        print({
+                            "n_ichan": in_channels, 
+                            "precision": key_layer_info['Inputbit'], 
+                            "kern_size": key_layer_info["Kernelsize"],
+                        })
                         PE_instance = PE_latency_analysis(
                             SimConfig_path=self.simconfig_path,
                             read_row=in_channels*(key_layer_info["Kernelsize"]**2),

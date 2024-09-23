@@ -5,13 +5,13 @@ import os
 import math
 from numpy import *
 import numpy as np
-from MNSIM.Hardware_Model.Crossbar import crossbar
-from MNSIM.Hardware_Model.DAC import DAC
-from MNSIM.Hardware_Model.ADC import ADC
-from MNSIM.Hardware_Model.Adder import adder
-from MNSIM.Hardware_Model.ShiftReg import shiftreg
-from MNSIM.Hardware_Model.Reg import reg
-from MNSIM.Hardware_Model.Buffer import buffer
+from ...MNSIM.Hardware_Model.Crossbar import crossbar
+from ...MNSIM.Hardware_Model.DAC import DAC
+from ...MNSIM.Hardware_Model.ADC import ADC
+from ...MNSIM.Hardware_Model.Adder import adder
+from ...MNSIM.Hardware_Model.ShiftReg import shiftreg
+from ...MNSIM.Hardware_Model.Reg import reg
+from ...MNSIM.Hardware_Model.Buffer import buffer
 test_SimConfig_path = os.path.join(os.path.dirname(os.path.dirname(os.getcwd())),"SimConfig.ini")
 # Default SimConfig file path: MNSIM_Python/SimConfig.ini
 

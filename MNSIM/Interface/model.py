@@ -14,10 +14,10 @@ import copy
 
 import torch
 from torch import nn
-from MNSIM.Interface.layer import BaseLayer
-from MNSIM.Interface.utils import yaml_io
-from MNSIM.Interface.utils.component import Component
-from MNSIM.Interface.utils.utils import SingleMap, DoubleMap
+from ...MNSIM.Interface.layer import BaseLayer
+from ...MNSIM.Interface.utils import yaml_io
+from ...MNSIM.Interface.utils.component import Component
+from ...MNSIM.Interface.utils.utils import SingleMap, DoubleMap
 
 
 def traverse(self, inputs, func):

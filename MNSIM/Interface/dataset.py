@@ -18,7 +18,7 @@ import torch
 import torch.utils.data as Data
 import torchvision
 import torchvision.transforms as Transforms
-from MNSIM.Interface.utils.component import Component
+from ...MNSIM.Interface.utils.component import Component
 
 def check_move_dataset(interface_path, dataset_path, name):
     """

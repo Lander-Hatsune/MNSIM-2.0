@@ -14,7 +14,7 @@ from email import header
 """
 import os
 import sys
-from MNSIM.Interface.evaluation import EvaluationInterface
+from ...MNSIM.Interface.evaluation import EvaluationInterface
 # change dir to top level
 top_level = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

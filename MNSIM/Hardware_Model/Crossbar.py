@@ -3,7 +3,7 @@
 import configparser as cp
 import os
 import math
-from MNSIM.Hardware_Model.Device import device
+from ...MNSIM.Hardware_Model.Device import device
 import numpy as np
 test_SimConfig_path = os.path.join(os.path.dirname(os.path.dirname(os.getcwd())),"SimConfig.ini")
 # Default SimConfig file path: MNSIM_Python/SimConfig.ini

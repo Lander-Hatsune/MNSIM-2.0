@@ -7,10 +7,10 @@ import math
 import configparser as cp
 work_path = os.path.dirname(os.getcwd())
 sys.path.append(work_path)
-from MNSIM.Hardware_Model.PE import ProcessElement
-from MNSIM.Hardware_Model.Buffer import buffer
-# from MNSIM.Interface.interface import TrainTestInterface
-# from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Hardware_Model.PE import ProcessElement
+from ...MNSIM.Hardware_Model.Buffer import buffer
+# from ...MNSIM.Interface.interface import TrainTestInterface
+# from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
 
 
 class PE_latency_analysis():
@@ -22,6 +22,7 @@ class PE_latency_analysis():
         # outdata: volume of output data (for PE) (Byte)
         # inprecision: input data precision of each Xbar
         # default_buf_size: default input buffer size (KB)
+        # print(locals())
         PEl_config = cp.ConfigParser()
         PEl_config.read(SimConfig_path, encoding='UTF-8')
         self.inbuf = buffer(SimConfig_path=SimConfig_path, buf_level=1, default_buf_size=default_buf_size)
@@ -83,7 +84,11 @@ class PE_latency_analysis():
         self.oReg_latency = math.ceil(read_column/self.PE.PE_group_ADC_num)*self.digital_period
         self.PE_digital_latency = self.iReg_latency + self.shiftreg_latency + self.input_demux_latency + \
                                   self.adder_latency + self.output_mux_latency + self.oReg_latency
+        iDigital = self.iReg_latency + self.input_demux_latency
+        oDigital = self.shiftreg_latency + self.adder_latency + self.output_mux_latency + self.oReg_latency
+        print(f"mult: {multiple_time}, buf_w: {self.PE_buf_wlatency}, buf_r: {self.PE_buf_rlatency}, DAC: {self.DAC_latency}, ADC: {self.ADC_latency}, XBar: {self.xbar_latency}, iDigital: {iDigital}, oDigital: {oDigital}")
         self.PE_latency = self.PE_buf_wlatency + self.PE_buf_rlatency + self.computing_latency + self.PE_digital_latency
+        print(self.PE_latency)
     def update_PE_latency(self, indata=0, rdata=0):
         # update the latency computing when indata and rdata change
         self.inbuf.calculate_buf_write_latency(indata)

@@ -8,11 +8,11 @@ import configparser as cp
 
 work_path = os.path.dirname(os.getcwd())
 sys.path.append(work_path)
-from MNSIM.Hardware_Model import *
-from MNSIM.Hardware_Model.Crossbar import crossbar
-from MNSIM.Hardware_Model.Tile import tile
-# from MNSIM.Interface.interface import TrainTestInterface
-from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Hardware_Model import *
+from ...MNSIM.Hardware_Model.Crossbar import crossbar
+from ...MNSIM.Hardware_Model.Tile import tile
+# from ...MNSIM.Interface.interface import TrainTestInterface
+from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
 import numpy as np
 import collections
 import pandas as pd

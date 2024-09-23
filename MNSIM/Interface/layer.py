@@ -19,7 +19,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from torch.autograd import Function
-from MNSIM.Interface.utils.component import Component
+from ...MNSIM.Interface.utils.component import Component
 
 def _get_thres(bit_width):
     """

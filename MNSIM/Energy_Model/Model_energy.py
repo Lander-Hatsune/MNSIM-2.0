@@ -7,14 +7,14 @@ work_path = os.path.dirname(os.getcwd())
 sys.path.append(work_path)
 import numpy as np
 import pandas as pd
-# from MNSIM.Interface.interface import TrainTestInterface
-from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
-from MNSIM.Mapping_Model.Tile_connection_graph import TCG
-from MNSIM.Hardware_Model.Tile import tile
-from MNSIM.Power_Model.Model_inference_power import Model_inference_power
-from MNSIM.Latency_Model.Model_latency import Model_latency
-from MNSIM.Hardware_Model.Buffer import buffer
-from MNSIM.Hardware_Model.Adder import adder
+# from ...MNSIM.Interface.interface import TrainTestInterface
+from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Mapping_Model.Tile_connection_graph import TCG
+from ...MNSIM.Hardware_Model.Tile import tile
+from ...MNSIM.Power_Model.Model_inference_power import Model_inference_power
+from ...MNSIM.Latency_Model.Model_latency import Model_latency
+from ...MNSIM.Hardware_Model.Buffer import buffer
+from ...MNSIM.Hardware_Model.Adder import adder
 
 class Model_energy():
     def __init__(self,NetStruct,SimConfig_path,model_power=None,

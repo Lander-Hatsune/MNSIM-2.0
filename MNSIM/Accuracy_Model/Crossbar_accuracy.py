@@ -4,8 +4,8 @@ import math
 import random
 import configparser as cp
 import numpy as np
-from MNSIM.Hardware_Model import *
-from MNSIM.Hardware_Model.Crossbar import crossbar
+from ...MNSIM.Hardware_Model import *
+from ...MNSIM.Hardware_Model.Crossbar import crossbar
 
 test_SimConfig_path = os.path.join(os.path.dirname(os.path.dirname(os.getcwd())),"SimConfig.ini")
 

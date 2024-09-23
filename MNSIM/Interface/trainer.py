@@ -15,8 +15,8 @@ from tqdm import tqdm
 import numpy as np
 
 import torch
-from MNSIM.Interface.utils.component import Component
-from MNSIM.Interface.layer import BaseWeightLayer
+from ...MNSIM.Interface.utils.component import Component
+from ...MNSIM.Interface.layer import BaseWeightLayer
 from torch import nn
 from torch.utils.tensorboard import SummaryWriter
 

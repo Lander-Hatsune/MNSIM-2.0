@@ -8,13 +8,13 @@ work_path = os.path.dirname(os.getcwd())
 sys.path.append(work_path)
 import numpy as np
 import pandas as pd
-# from MNSIM.Interface.interface import TrainTestInterface
-from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
-from MNSIM.Mapping_Model.Tile_connection_graph import TCG
-from MNSIM.Latency_Model.Tile_latency import tile_latency_analysis
-from MNSIM.Latency_Model.Pooling_latency import pooling_latency_analysis
-from MNSIM.NoC.interconnect_estimation import interconnect_estimation
-from MNSIM.Hardware_Model.Buffer import buffer
+# from ...MNSIM.Interface.interface import TrainTestInterface
+from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Mapping_Model.Tile_connection_graph import TCG
+from ...MNSIM.Latency_Model.Tile_latency import tile_latency_analysis
+from ...MNSIM.Latency_Model.Pooling_latency import pooling_latency_analysis
+from ...MNSIM.NoC.interconnect_estimation import interconnect_estimation
+from ...MNSIM.Hardware_Model.Buffer import buffer
 
 
 def merge_interval(interval):

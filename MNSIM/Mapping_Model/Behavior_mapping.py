@@ -8,10 +8,10 @@ import configparser as cp
 work_path = os.path.dirname(os.getcwd())
 # print("ok", work_path)
 sys.path.append(work_path)
-from MNSIM.Hardware_Model import *
-from MNSIM.Hardware_Model.Tile import tile
-# from MNSIM.Interface.interface import TrainTestInterface
-from MNSIM.Interface.utils.init_interface import _init_evaluation_interface
+from ...MNSIM.Hardware_Model import *
+from ...MNSIM.Hardware_Model.Tile import tile
+# from ...MNSIM.Interface.interface import TrainTestInterface
+from ...MNSIM.Interface.utils.init_interface import _init_evaluation_interface
 
 
 class behavior_mapping(tile):
